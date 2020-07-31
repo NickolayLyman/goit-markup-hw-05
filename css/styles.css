@@ -80,6 +80,7 @@ ul {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--title-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .navigation-list-link:hover,
 .navigation-list-link:focus {
@@ -117,13 +118,15 @@ ul {
     height: 11.2px;
     vertical-align: middle;
     fill: var(--main-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .phone-icon-svg {
     margin-right: 10px;
     width: 10px;
     height: 14.94px;
     vertical-align: middle;
-    fill: var(--main-color); 
+    fill: var(--main-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .header-mail-link,
 .header-tel-link {
@@ -135,6 +138,7 @@ ul {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--main-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-mail-link:hover,
 .header-mail-link:focus,
@@ -211,11 +215,12 @@ ul {
     cursor: pointer;
     color: var(--secondary-color);
     background-color: var(--accent-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn:hover,
 .modal-btn:focus {
     color: var(--secondary-color);
-    background-color: var(--accent-color);
+    background-color: var(--main-color);
 }
 /*Преимущества*/
 .section {
@@ -346,6 +351,7 @@ ul {
     width: 20px;
     height: 20px;
     fill: #AFB1B8;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-list-link {
     display: block; 
@@ -353,6 +359,7 @@ ul {
     height: 44px;
     padding: 12px;
     border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 } 
 .social-list-link:hover,
 .social-list-link:focus {
@@ -394,9 +401,11 @@ ul {
     justify-content: center; 
     align-items: center; 
     color: #AFB1B8;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-icon {
    fill: #AFB1B8;
+   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-list-link:hover,
 .clients-list-link:focus {
@@ -439,7 +448,8 @@ ul {
     font-style: normal;
     font-size: 14px;
     line-height: 1.71;
-    color: var(--secondary-color)
+    color: var(--secondary-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-mail-link,
 .footer-tel-link {
@@ -447,6 +457,7 @@ ul {
     font-size: 14px;
     line-height: 1.71;
     color: rgba(255, 255, 255, 0.6);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-map-link:hover,
 .footer-map-link:focus,
@@ -489,6 +500,7 @@ ul {
     padding: 12px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 } 
 .footer-social-list-link:hover,
 .footer-social-list-link:focus {
@@ -522,9 +534,12 @@ ul {
     padding-bottom: 6px;
     padding-left: 22px;
     border-radius: 4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-item:hover,
 .btn-item:focus {
+    color: var(--secondary-color);
+    background-color: var(--accent-color);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px 
     rgba(0, 0, 0, 0.08), 0px 3px 1px 
     rgba(0, 0, 0, 0.1);
@@ -572,11 +587,34 @@ ul {
     font-size: 16px;
     line-height: 1.87;
     color: var(--main-color);
+
+}
+.work-examples-wrapper {
+    position: relative;
+    overflow: hidden;
+    
 }
 .work-examples-desc {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    padding-top: 63px;
+    padding-right: 24px;
+    padding-bottom: 63px;
+    padding-left: 24px;
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 150, 243, 0.9);
     font-size: 18px;
     line-height: 1.56;
     color:var(--secondary-color);
-    background-color: var(--accent-color);
-    /*Задано свойство background-color для визуализации*/ 
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+.work-examples-item-link:hover .work-examples-desc {
+    transform: translateY(0%);
+    opacity: 1;
+    
 }
